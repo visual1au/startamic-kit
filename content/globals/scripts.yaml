@@ -1,0 +1,13 @@
+title: 'Tracking Code Scripts'
+data:
+  enable_all: true
+  tracking_scripts:
+    -
+      id: m0f2mnhh
+      enable_script: true
+      name: 'Font Awesome'
+      script:
+        code: '<script src="https://kit.fontawesome.com/ad0a4ab6c8.js" crossorigin="anonymous"></script>'
+        mode: htmlmixed
+      type: new_set
+      enabled: true

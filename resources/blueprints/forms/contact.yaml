@@ -1,0 +1,43 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: text
+              display: Name
+              validate:
+                - required
+              placeholder: 'Stacey Fakename'
+            handle: name
+          -
+            field:
+              type: text
+              width: 50
+              display: Email
+              validate:
+                - required
+              input_type: email
+              placeholder: stacey@fakename.com
+            handle: email
+          -
+            field:
+              type: text
+              width: 50
+              display: Phone
+              validate:
+                - required
+                - 'regex:/^(?:\+?(61))? ?(?:\((?=.*\)))?(0?[2-57-8])\)? ?(\d\d(?:[- ](?=\d{3})|(?!\d\d[- ]?\d[- ]))\d\d[- ]?\d[- ]?\d{3})$/'
+              input_type: tel
+              placeholder: '0422333444'
+            handle: phone
+          -
+            field:
+              type: textarea
+              display: Message
+              validate:
+                - required
+              placeholder: 'Your message...'
+            handle: message

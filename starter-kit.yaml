@@ -1,0 +1,18 @@
+export_paths:
+  - app/Providers/AppServiceProvider.php
+  - config
+  - content
+  - database
+  - public
+  - resources
+  - .env.example
+  - bitbucket-pipelines.yml
+  - package.json
+  - README.md
+  - production.Dockerfile
+  - tailwind.config.js
+  - vapor.yml
+  - vite.config.js
+dependencies:
+  gerttimmerman/statamic-zapier: ^1.6
+  statamic/eloquent-driver: ^4.14

@@ -1,0 +1,35 @@
+id: # Add project ID
+name: # Add project name
+environments:
+  staging:
+    memory: 1024
+    database: "standard-hosting-db"
+    cli-memory: 1024
+    cli-timeout: 900
+    cli-tmp-storage: 512
+    runtime: docker
+    dockerfile: production.Dockerfile
+    storage: # Add storage name
+    domain: # Add domain name
+    scheduler: true
+    #deploy:
+    #- "php artisan migrate:fresh --force"
+    build:
+      - "composer install --no-dev"
+      - "php artisan event:cache"
+      - "npm ci && npm run build && rm -rf node_modules"
+#  production:
+#    memory: 1024
+#    database: "standard-hosting-db"
+#    cli-memory: 1024
+#    cli-timeout: 900
+#    cli-tmp-storage: 512
+#    runtime: docker
+#    dockerfile: production.Dockerfile
+#    storage: # Add storage name
+#    domain: # Add domain name
+#    scheduler: true
+#    build:
+#      - "composer install --no-dev"
+#      - "php artisan event:cache"
+#      - "npm ci && npm run build && rm -rf node_modules"

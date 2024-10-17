@@ -1,0 +1,34 @@
+<div class="flex md:flex-row flex-col justify-between md:space-x-8">
+    <div class="space-y-2 flex flex-col md:w-4/12 md:mb-0 mb-2">
+        <header class="text-center sm:text-left mb-8 md:mb-10 space-y-4">
+            <h5 class="font-bold text-4xl text-primary">{{ faq_title }}</h5>
+            <p class="lg:max-w-lg">{{ faq_content }}</p>
+        </header>
+    </div>
+    <div class="md:w-8/12">
+        <div x-data="{ openFaq: null }" class="flex flex-col items-center justify-center mx-auto">
+            {{ faq_items }}
+            <div :class="openFaq === '{{ id }}' ? 'bg-gray-100' : 'bg-white border-b'"
+                 class="w-full p-4
+                 {{ if index === 0 }}border-t{{ /if }}">
+                <a @click="openFaq === '{{ id }}' ? openFaq = null : openFaq = '{{ id }}'"
+                   class="flex items-center space-x-6 p-2 md:p-4 w-full cursor-pointer text-tertiary">
+                    <div class="relative flex justify-center items-center text-secondary">
+                        <i x-show="openFaq !== '{{ id }}'" class="fa-regular fa-plus"></i>
+                        <i x-show="openFaq === '{{ id }}'" class="fa-regular fa-minus"
+                           :class="{'text-secondary': openFaq === '{{ id }}'}"></i>
+                    </div>
+                    <p class="text-secondary font-semibold mt-1">
+                        {{ question }}
+                    </p>
+                </a>
+                <div x-show="openFaq === '{{ id }}'" class="ml-12 md:ml-14 transition ease-out duration-700" x-cloak>
+                    <p class="text-secondary">
+                        {{ answer }}
+                    </p>
+                </div>
+            </div>
+            {{ /faq_items }}
+        </div>
+    </div>
+</div>

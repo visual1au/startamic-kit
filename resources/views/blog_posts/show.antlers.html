@@ -1,0 +1,32 @@
+<section>
+    <div class="content-area min-h-screen">
+        <div class="inner-padding">
+            <header>
+                <h1 class="text-primary font-bold">{{ title | upper }}</h1>
+                <div class="flex items-center mt-12">
+                    <div class="ml-6">
+                        <p class="text-sm">{{ author:name }}</p>
+                        <p class="text-xs">
+                            {{ date }} <span class="mx-2">•</span>{{
+                        reading_time }} min read
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="my-12">
+                <figure class="float-left mr-6 mb-6 md:w-1/2 w-full">
+                    <img
+                        src="{{ featured_image }}"
+                        alt="{{ featured_image:alt }}"
+                        class="border border-inherit w-full object-cover"
+                    />
+                </figure>
+
+                <span class="text-base text-secondary prose clear-none"
+                >{{ blog_content }}
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

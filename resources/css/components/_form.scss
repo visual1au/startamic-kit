@@ -1,0 +1,13 @@
+
+input, select, textarea {
+    @apply border border-secondary text-sm rounded-lg focus:ring-secondary focus:outline-primary focus:ring-1 focus:border-primary block w-full p-2.5;
+}
+
+.error {
+    @apply text-red-500;
+}
+
+/* Honeypot */
+.poohbear {
+    display: none;
+}

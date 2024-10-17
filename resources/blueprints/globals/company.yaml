@@ -1,0 +1,69 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: text
+              display: Name
+            handle: name
+          -
+            field:
+              type: assets
+              display: Logo
+              container: assets
+              max_files: 1
+            handle: logo
+          -
+            field:
+              type: assets
+              display: Icon
+              container: assets
+              max_files: 1
+            handle: icon
+      -
+        fields:
+          -
+            field:
+              sets:
+                new_set_group:
+                  sets:
+                    privacy:
+                      fields:
+                        -
+                          field:
+                            type: text
+                            display: Title
+                          handle: title
+                        -
+                          field:
+                            type: link
+                            display: Link
+                          handle: link
+                      display: Privacy
+                    socials:
+                      fields:
+                        -
+                          field:
+                            type: text
+                            display: Title
+                          handle: title
+                        -
+                          field:
+                            type: link
+                            display: URL
+                          handle: url
+                        -
+                          field:
+                            type: code
+                            display: 'Font Awesome'
+                          handle: font_awesome
+                      display: Socials
+                      instructions: 'Paste font awesome script'
+                  display: 'New Set Group'
+              type: replicator
+              display: Links
+            handle: links
+        display: Links

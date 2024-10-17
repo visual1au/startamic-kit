@@ -1,0 +1,54 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+            handle: title
+          -
+            field:
+              type: users
+              default: current
+              display: Author
+              max_items: 1
+              localizable: true
+            handle: author
+          -
+            field:
+              type: assets
+              display: 'Featured Image'
+              container: assets
+              max_files: 1
+            handle: featured_image
+          -
+            field:
+              type: bard
+              display: 'Blog Content'
+              remove_empty_nodes: false
+            handle: blog_content
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: slug
+              validate: 'max:200'
+              localizable: true
+            handle: slug
+          -
+            field:
+              type: date
+              default: now
+              required: true
+              validate:
+                - required
+            handle: date
+title: 'Blog Post'

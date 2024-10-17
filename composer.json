@@ -1,0 +1,9 @@
+{
+    "name": "visual1au/startamic-kit",
+    "extra": {
+        "statamic": {
+            "name": "Statamic Panic Starter Kit",
+            "description": "Statamic Panic starter kit for Visual 1"
+        }
+    }
+}

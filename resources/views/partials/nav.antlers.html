@@ -1,0 +1,28 @@
+{{# Sticky navbar from Flowbite - see for more options https://flowbite.com/docs/components/navbar/#sticky-navbar #}}
+{{# Note: there are several style classes in the global.scss file used if copying #}}
+<nav class="bg-white fixed w-full z-50 top-0 start-0 border-b border-background py-1 md:py-2 shadow-md shadow-gray-950/40">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 lg:px-8">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="{{ company:logo }}" class="h-6 lg:h-8 xl:h-9" alt="{{ company:name }}" />
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="/#contact"><button type="button" class="btn btn-primary nav-cta-button">CONTACT US</button></a>
+            <button data-collapse-toggle="navbar-sticky" type="button" class="nav-hamburger" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+        {{# NB: hidden class must be present here for Flowbite (not in scss stylesheet where it's converted) #}}
+        <div class="nav-items-container hidden" id="navbar-sticky">
+            <ul class="nav-items">
+                {{ nav:main_nav }}
+                    <li>
+                        <a href="{{ url }}" class="nav-item">{{ title }}</a>
+                    </li>
+                {{ /nav:main_nav }}
+            </ul>
+        </div>
+    </div>
+</nav>

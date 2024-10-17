@@ -1,0 +1,85 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+            handle: title
+          -
+            field:
+              type: markdown
+              display: Content
+              localizable: true
+            handle: content
+          -
+            field:
+              type: template
+              display: Template
+              localizable: true
+            handle: template
+      -
+        fields:
+          -
+            field:
+              sets:
+                new_set_group:
+                  sets:
+                    new_set:
+                      fields:
+                        -
+                          field:
+                            type: assets
+                            display: 'Panel Image'
+                            container: assets
+                            max_files: 1
+                          handle: panel_image
+                        -
+                          field:
+                            type: text
+                            display: 'Panel Header'
+                          handle: panel_header
+                        -
+                          field:
+                            type: markdown
+                            display: 'Panel Content'
+                          handle: panel_content
+                        -
+                          field:
+                            type: link
+                            display: 'CTA Link'
+                            collections:
+                              - pages
+                          handle: cta_link
+                      display: 'New Set'
+                  display: 'New Set Group'
+              type: replicator
+              display: Panels
+            handle: panels
+        display: Panels
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: slug
+              validate: 'max:200'
+              localizable: true
+            handle: slug
+          -
+            field:
+              type: entries
+              listable: false
+              max_items: 1
+              collections:
+                - pages
+              localizable: true
+            handle: parent
+title: Page

@@ -1,0 +1,60 @@
+image: visual1/laravel-ci:latest
+
+composerStep: &composerStep
+  step:
+    name: Compile Composer
+    artifacts:
+      - vendor/**
+      - .env
+    script:
+      - composer install --no-interaction --no-progress --prefer-dist -o
+      - cp .env.example .env
+      - php artisan key:generate
+
+npmStep: &npmStep
+  step:
+    name: Compile NPM
+    artifacts:
+      - node_modules/**
+      - public/build/**
+    script:
+      - npm install
+      - npm run build
+
+testStep: &testStep
+  step:
+    name: Unit Testing
+    script:
+      - ./vendor/bin/paratest
+
+
+pipelines:
+  branches:
+    staging:
+      - parallel:
+          fail-fast: true
+          deployment: staging
+          steps:
+            - <<: *composerStep
+            - <<: *npmStep
+      - step:
+          name: Deploy Staging
+          deployment: staging
+          services:
+            - docker
+          script:
+            - php vendor/bin/vapor deploy staging
+    production:
+      - parallel:
+          fail-fast: true
+          deployment: production
+          steps:
+            - <<: *composerStep
+            - <<: *npmStep
+      - step:
+          name: Deploy Production
+          deployment: production
+          services:
+            - docker
+          script:
+            - php vendor/bin/vapor deploy production

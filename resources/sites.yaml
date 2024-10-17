@@ -1,0 +1,6 @@
+default:
+  name: '{{ config:app:name }}'
+  lang: ''
+  locale: en_US
+  url: /
+  attributes: {  }

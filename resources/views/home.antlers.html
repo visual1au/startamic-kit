@@ -1,0 +1,52 @@
+<section id="hero" style="background-image: url('/assets/hero_bg.jpg');">
+    <div class="content-area">
+        <div class="inner-padding">
+            {{#  Content goes here #}}
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="content-area">
+        <div class="inner-padding">
+            <header class="text-center mb-12">
+                <h2 class="text-primary font-bold">ABOUT</h2>
+            </header>
+            {{ partial:panels }}
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="content-area">
+        <div class="inner-padding">
+            <header class="text-center mb-12">
+                <h2 class="text-primary font-bold">GALLERY</h2>
+            </header>
+            {{ partial:gallery }}
+        </div>
+    </div>
+</section>
+
+{{ if faq_enable }}
+    <section id="faq">
+        <div class="content-area">
+            <div class="inner-padding">
+                {{ partial:faq }}
+            </div>
+        </div>
+    </section>
+{{ /if }}
+
+<section id="contact">
+    <div class="content-area">
+        <div class="inner-padding max-w-3xl mx-auto">
+            <header class="text-center mb-12">
+                <h2 class="text-primary font-bold">CONTACT</h2>
+            </header>
+            {{ form:contact }}
+                {{ partial:form }}
+            {{ /form:contact }}
+        </div>
+    </div>
+</section>

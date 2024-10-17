@@ -1,0 +1,33 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+            handle: title
+          -
+            field:
+              type: code
+              display: Script
+            handle: script
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: entries
+              listable: false
+              max_items: 1
+              collections:
+                - scripts
+              localizable: true
+            handle: parent
+title: Script

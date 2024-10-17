@@ -1,0 +1,34 @@
+{{ panels }}
+<div id="{{ panel_header }}" class="scroll-my-32">
+    <div class="md:block hidden">
+        {{ if index % 2 }}
+            <div class="flex flex-col items-center bg-white md:flex-row w-full relative space-x-16">
+                <div class="flex flex-col justify-between p-4 leading-normal md:w-1/2">
+                    <h3 class="font-bold text-secondary relative mb-12">{{ panel_header | upper }}
+                        <span class="absolute left-0 bottom-[-20px] w-20 h-1 bg-primary underline-animate"></span></h3>
+                    <span class="text-2xl text-secondary prose">{{ panel_content }}</span>
+                </div>
+                <img class="object-contain md:w-1/2 h-[30rem]" src="{{ panel_image }}" alt="{{ company:name }}">
+            </div>
+        {{ else }}
+            <div class="flex flex-col items-center bg-white md:flex-row w-full relative space-x-16">
+                <img class="object-contain md:w-1/2 h-[30rem]" src="{{ panel_image }}" alt="{{ company:name }}">
+                <div class="flex flex-col justify-between p-4 leading-normal md:w-1/2">
+                    <h3 class="font-bold text-secondary relative mb-12">{{ panel_header | upper }}
+                        <span class="absolute left-0 bottom-[-20px] w-20 h-1 bg-primary underline-animate"></span></h3>
+                    <span class="text-2xl text-secondary prose">{{ panel_content }}</span>
+                </div>
+            </div>
+        {{ /if }}
+    </div>
+
+    <div class="md:hidden flex flex-col items-center bg-white md:flex-row w-full relative mb-20">
+        <div class="flex flex-col justify-between leading-normal md:w-1/2 mb-10">
+            <h3 class="font-bold text-secondary relative mb-12">{{ panel_header | upper }}
+                <span class="absolute left-0 bottom-[-20px] w-20 h-1 bg-primary underline-animate"></span></h3>
+            <span class="text-2xl text-secondary prose">{{ panel_content }}</span>
+        </div>
+        <img class="object-cover md:w-1/2 h-96 md:h-auto" src="{{ panel_image }}" alt="{{ company:name }}">
+    </div>
+</div>
+{{ /panels }}

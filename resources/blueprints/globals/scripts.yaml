@@ -1,0 +1,49 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            field:
+              type: toggle
+              display: 'Enable/disable ALL scripts'
+              instructions: 'This can be used to disable all scripts and over-rides individual scripts setting'
+            handle: enable_all
+          -
+            field:
+              sets:
+                new_set_group:
+                  sets:
+                    new_set:
+                      fields:
+                        -
+                          field:
+                            type: toggle
+                            display: 'Enable/disable the script'
+                            validate:
+                              - required
+                            instructions: 'Add each script to be included on site'
+                          handle: enable_script
+                        -
+                          field:
+                            type: text
+                            display: Name
+                            validate:
+                              - required
+                            instructions: 'Your name or reference for the script'
+                          handle: name
+                        -
+                          field:
+                            type: code
+                            display: Script
+                            validate:
+                              - required
+                            instructions: 'The HTML or Javascript tracking code'
+                          handle: script
+                      display: 'New Set'
+                  display: 'New Set Group'
+              type: replicator
+              display: 'Tracking Scripts'
+              instructions: 'Add each script to be included on site'
+            handle: tracking_scripts

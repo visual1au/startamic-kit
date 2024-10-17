@@ -1,0 +1,14 @@
+<div>
+    {{ if type == 'link' }}
+        <a
+            href="{{ url }}"
+            class="{{ class }}">
+            {{ text | upper}}
+        </a>
+    {{ else }}
+        <button
+            class="{{ class }}">
+            {{ text | upper}}
+        </button>
+    {{ /if }}
+</div>

@@ -1,0 +1,74 @@
+body {
+    @apply font-sans min-h-screen;
+
+    .content-area {
+        @apply max-w-7xl mx-auto;
+
+        .inner-padding {
+            @apply md:px-12 px-6 py-12 lg:py-20;
+        }
+    }
+
+    nav {
+        .nav-cta-button {
+            @apply text-white bg-primary focus:ring-4 focus:ring-secondary;
+            @apply font-medium text-xs lg:text-sm xl:text-lg px-3 lg:px-4 py-3 text-center;
+            @apply transition hover:scale-110;
+        }
+
+        .nav-hamburger {
+            @apply inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-primary rounded-lg md:hidden;
+            @apply hover:bg-tertiary focus:outline-none focus:ring-2 focus:ring-gray-200;
+        }
+
+        .nav-items-container {
+            @apply items-center justify-between w-full md:flex md:w-auto md:order-1;
+
+            .nav-items {
+                @apply flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-white;
+                @apply md:space-x-4 lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0;
+
+                .nav-item {
+                    @apply block py-2 px-3 md:p-0 text-xs lg:text-sm xl:text-lg text-gray-900 rounded;
+                    @apply hover:bg-tertiary md:hover:bg-transparent md:hover:text-primary hover:scale-110 transition;
+                }
+            }
+        }
+    }
+}
+
+section {
+    @apply scroll-my-10;
+}
+
+#hero {
+    @apply relative bg-cover bg-top bg-no-repeat h-[50rem] flex items-center mt-7 lg:mt-9 xl:mt-14 2xl:mt-20;
+}
+
+#about {
+    //
+}
+
+#gallery {
+    //
+}
+
+#faq {
+    a {
+        @apply transition ease-in-out lg:delay-150 lg:hover:-translate-y-0 lg:hover:scale-105 lg:duration-300;
+    }
+}
+
+#contact {
+    //
+}
+
+footer {
+    .social-icon {
+        @apply text-primary;
+
+        &:hover i {
+            @apply text-secondary;
+        }
+    }
+}

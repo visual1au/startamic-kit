@@ -1,0 +1,24 @@
+title: Company
+data:
+  name: Statamic
+  logo: logo.png
+  icon: icon.jpeg
+  links:
+    -
+      id: m0f2kpym
+      title: Facebook
+      url: '/#'
+      font_awesome:
+        code: '<i class="fa-brands fa-facebook-f"></i>'
+        mode: htmlmixed
+      type: socials
+      enabled: true
+    -
+      id: m0f2lmmd
+      title: Instagram
+      url: '/#'
+      font_awesome:
+        code: '<i class="fa-brands fa-instagram"></i>'
+        mode: htmlmixed
+      type: socials
+      enabled: true

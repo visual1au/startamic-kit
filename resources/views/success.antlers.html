@@ -1,0 +1,14 @@
+<section id="success" class="flex-grow">
+    <div class="content-area">
+        <div class="inner-padding mt-12">
+            <div class="text-center">
+                <h3 class="text-secondary font-bold">{{ title | upper }}</h3>
+                <i class="fa-regular fa-circle-check fa-5x text-primary my-6"></i>
+                <span class="mb-4 text-xl text-dark prose">{{ content }}</span>
+                <div class="mt-20">
+                    {{ partial:button text="back to homepage" class="btn btn-primary" type="link" url="/" }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

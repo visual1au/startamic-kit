@@ -1,0 +1,40 @@
+{{ if errors }}
+    <div
+        id="form-errors"
+        class="p-4 mb-4 text-sm text-white rounded-lg bg-secondary"
+        role="alert"
+    >
+        <span class="font-bold">Something doesn't look right.</span> Please check
+        the following required fields:
+        <ul class="max-w-md space-y-1 list-disc list-inside mt-2">
+            {{ errors }}
+            <li>{{ value }}</li>
+            {{ /errors }}
+        </ul>
+    </div>
+{{ /if }}
+<div class="flex flex-wrap -mx-2">
+    {{ fields }}
+    <div class="mb-4 px-2 {{ if width == '50' }}md:w-1/2 w-full{{ else }}w-full{{ /if }}">
+        <label class="text-secondary">
+            {{ display }}
+            {{ if validate | contains:required }}
+                <sup class="error">*</sup>
+            {{ /if }}
+        </label>
+        <div>{{ field }}</div>
+        {{ if error }}
+            <p class="error text-xs mt-1">{{ error }}</p>
+        {{ /if }}
+    </div>
+    {{ /fields }}
+    {{# Honeypot - must match honeypot field name in CP Form config #}}
+    <div class="mb-4 px-2 w-full poohbear">
+        <label class="text-secondary">Form Username<sup class="error">*</sup></label>
+        <div><input type="text" name="form_username"></div>
+    </div>
+
+    <div class="mt-10 flex justify-center px-2">
+        {{ partial:button text="submit" class="btn btn-primary" type="submit" }}
+    </div>
+</div>
