@@ -16,6 +16,14 @@ export default defineConfig({
             ],
             refresh: true,
         }),
-        // vue2(),
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                // NB: might be able to remove with Vite v6 as this should be default.
+                // https://sass-lang.com/documentation/breaking-changes/legacy-js-api/#bundlers
+                api: 'modern-compiler',
+            },
+        },
+    },
 });
